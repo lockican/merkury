@@ -102,6 +102,7 @@ body{
 }
 
 .advantages_item{
+    position: relative;
     text-align: center;
     width: 470px;
 }
@@ -121,6 +122,21 @@ body{
 
 .advantages_item:nth-child(3){
     background-image: url(img/adavange-3.png);
+}
+
+.advantages_item::after{
+    content: "";
+    position: absolute;
+    right: -89px;
+    top: 36px;
+    width: 220px;
+    height: 1px;
+    background-color: #8492af;
+    opacity: 0.3;
+}
+
+.advantages_item:last-child::after{
+    display: none;
 }
 
 .advantages_title{
@@ -287,6 +303,9 @@ body{
 }
 
 .template_title{
+    margin: 0;
+    padding-top: 102px;
+    padding-bottom: 48px;
     text-align: center;
     color: #0e1a35;
     font-size: 60px;
@@ -294,21 +313,29 @@ body{
 }
 
 .template_paragraph{
-    text-align: center;
     padding-left: 360px;
     padding-right: 360px;
+    margin: 0;
     color: #8492af;
+    text-align: center;
+    line-height: 30px;
 }
 
 .template_filter{
     display: flex;
     flex-wrap: wrap;
+    padding-top: 177px;
 }
 
 .template_layot,.template_customize{
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+.template_layot h4,.template_customize h4{
+    margin: 0;
+    margin-bottom: 14px;
 }
 
 .template_layot input,.template_customize input{
@@ -324,8 +351,17 @@ body{
     font-weight: bold;
 }
 
+.template_customize .template_desc{
+    text-align: right;
+}
+
 .template_desc{
+    line-height: 30px;
     color: #8492af;
+}
+
+.template_customize input{
+    transform: rotate(180deg);
 }
 
 .price_title{
@@ -336,6 +372,7 @@ body{
 }
 
 .price_list{
+    margin: 0;
     list-style: none;
     display: flex;
     padding: 0;
@@ -354,9 +391,19 @@ body{
 }
 
 .price_subtitle{
+    margin: 0;
+    padding-top: 48px;
+    padding-bottom: 45px;
     font-size: 24px;
     color: #0e1a35;
     font-weight: normal;
+}
+
+.price_pargh{
+    margin: 0;
+    padding-left: 103px;
+    padding-right: 90px;
+    padding-bottom: 45px;
 }
 
 .price_pargh strong{
@@ -371,12 +418,35 @@ body{
 }
 
 .price_description{
+    position: relative;
     display: block;
+    padding-bottom: 18px;
+    padding-left: 30px;
     color: #8492af;
 }
 
+.price_description::before{
+    position: absolute;
+    content: '';
+    left: 52px;
+    width: 24px;
+    height: 24px;
+    background-image: url(img/check-mark.svg);
+}
+
+.price_description--disable::before{
+    background-image: url(img/remove.svg);
+}
+
+.price_description:last-child{
+    padding-bottom: 44px;
+}
+
 .price_information{
-    padding:0 310px;
+    margin: 0;
+    padding:0 510px;
+    padding-top: 109px;
+    padding-bottom: 67px;
     text-align: center;
     color: #8492af;
     line-height: 30px;
@@ -389,10 +459,27 @@ body{
 }
 
 .price_btn{
+    position: relative;
     padding: 16px 63px 17px 64px;
+    margin-bottom: 104px;
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
+}
+
+.price_btn::before,.price_btn::after{
+    content: "";
+    position: absolute;
+    left: -256px;
+    top: 22px;
+    width: 226px;
+    height: 1px;
+    background-color: #8492af;
+    opacity: 0.3;
+}
+
+.price_btn::after{
+    left: 235px;
 }
 
 .footer{
@@ -416,7 +503,7 @@ body{
 }
 
 .footer_social{
-    width: 83px;
+    width: 100px;
     justify-content: space-between;
 }
 
@@ -435,3 +522,4 @@ body{
 .footer_description{
     width: 1008px;
 }
+
